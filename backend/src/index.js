@@ -1,6 +1,7 @@
 import express from "express";
 import authRoutes from "./routes/auth.route.js";
 import dotenv from "dotenv";
+import { connectDB } from "./lib/db.js";
 
 const app = express();
 
@@ -15,4 +16,5 @@ app.use((req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
+  connectDB();
 });
